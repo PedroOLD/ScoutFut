@@ -64,7 +64,7 @@ export function GoalTimingCard({ nameA, nameB, A, B }: GoalTimingCardProps) {
         </span>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div className="rg-2" style={{ gap: 24 }}>
         <div>
           <div style={{ fontSize: 11, fontWeight: 500, color: C.green800, marginBottom: 10 }}>Gols marcados</div>
           <MiniChart dataA={A.scored} dataB={B.scored} colorA={C.blue400} colorB={C.purple400} />

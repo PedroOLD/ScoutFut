@@ -35,7 +35,7 @@ export function PoissonInline({ teamA, teamB, avgAttackA, avgDefA, avgAttackB, a
     <Card style={{ marginBottom: 14 }}>
       <SectionTitle>Modelo de Poisson — placares prováveis pelas médias reais</SectionTitle>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 8, marginBottom: 14 }}>
+      <div className="rg-5" style={{ gap: 8, marginBottom: 14 }}>
         <MetricCard label={`λ ${teamA}`} value={lA.toFixed(2)} valueColor={C.blue600} sub="gols esp." />
         <MetricCard label={`λ ${teamB}`} value={lB.toFixed(2)} valueColor={C.purple600} sub="gols esp." />
         <MetricCard label="Over 1.5" value={`${over15.toFixed(1)}%`} valueColor={C.green800} />
@@ -43,7 +43,7 @@ export function PoissonInline({ teamA, teamB, avgAttackA, avgDefA, avgAttackB, a
         <MetricCard label="Ambos marcam" value={`${btts.toFixed(1)}%`} />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+      <div className="rg-2" style={{ gap: 14 }}>
         <div>
           <div style={{ fontSize: 12, fontWeight: 500, color: C.textSec, marginBottom: 8 }}>
             Top 8 placares mais prováveis
@@ -115,7 +115,7 @@ export function PoissonInline({ teamA, teamB, avgAttackA, avgDefA, avgAttackB, a
             λ = (ataque + defesa adversária) / 2 · Azul = vitória {teamA} · Roxo = vitória {teamB}
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginTop: 12 }}>
+          <div className="rg-3" style={{ gap: 8, marginTop: 12 }}>
             <MetricCard label={`${teamA} vence`} value={`${pA.toFixed(1)}%`} valueColor={C.blue600} />
             <MetricCard label="Empate" value={`${pD.toFixed(1)}%`} valueColor={C.gray600} />
             <MetricCard label={`${teamB} vence`} value={`${pB.toFixed(1)}%`} valueColor={C.purple600} />

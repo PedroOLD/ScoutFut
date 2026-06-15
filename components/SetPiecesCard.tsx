@@ -89,7 +89,7 @@ export function SetPiecesCard({ nameA, nameB, A, B }: SetPiecesCardProps) {
       })}
 
       {(A.note || B.note) && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 10 }}>
+        <div className="rg-2" style={{ gap: 10, marginTop: 10 }}>
           <div style={{ fontSize: 11, color: C.blue600, lineHeight: 1.5, fontStyle: "italic" }}>{A.note ?? ""}</div>
           <div style={{ fontSize: 11, color: C.purple600, lineHeight: 1.5, fontStyle: "italic" }}>{B.note ?? ""}</div>
         </div>

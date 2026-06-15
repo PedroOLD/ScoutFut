@@ -34,7 +34,7 @@ export function ScoutApp() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", color: C.text, background: C.bgSec, minHeight: "100vh" }}>
 
       {/* Header */}
-      <div style={{ background: C.bg, borderBottom: `0.5px solid ${C.border}`, padding: "12px 24px" }}>
+      <div className="scout-hdr" style={{ background: C.bg, borderBottom: `0.5px solid ${C.border}` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
             <div>
@@ -55,7 +55,7 @@ export function ScoutApp() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "20px 24px" }}>
+      <div className="scout-wrap" style={{ maxWidth: 1100, margin: "0 auto", padding: "1rem" }}>
 
         {/* Match header */}
         <div style={{
@@ -91,9 +91,9 @@ export function ScoutApp() {
         )}
 
         {/* Tabs */}
-        <div style={{
-          display: "flex", borderBottom: `0.5px solid ${C.border}`, marginBottom: 16,
-          background: C.bg, borderRadius: "12px 12px 0 0", padding: "0 4px",
+        <div className="scout-tabs" style={{
+          borderBottom: `0.5px solid ${C.border}`, marginBottom: 16,
+          background: C.bg, padding: "0 4px",
         }}>
           <button style={tabStyle("scout")} onClick={() => setTab("scout")}>Relatório de scout</button>
           <button style={tabStyle("poisson")} onClick={() => setTab("poisson")}>Modelo de Poisson</button>
@@ -102,7 +102,7 @@ export function ScoutApp() {
         {tab === "scout" && (
           <>
             {/* Summary metrics */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 10, marginBottom: 16 }}>
+            <div className="rg-4" style={{ gap: 10, marginBottom: 16 }}>
               <MetricCard label={`${teamA.name} — vitória`} value={`${probA.toFixed(1)}%`} valueColor={C.blue600} />
               <MetricCard label="Empate" value={`${probD.toFixed(1)}%`} valueColor={C.gray600} />
               <MetricCard label={`${teamB.name} — vitória`} value={`${probB.toFixed(1)}%`} valueColor={C.purple600} />
@@ -110,7 +110,7 @@ export function ScoutApp() {
             </div>
 
             {/* Team columns */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+            <div className="rg-2" style={{ gap: 14, marginBottom: 14 }}>
               <TeamColumn
                 name={teamA.name} flag={teamA.flag} coach={teamA.coach}
                 matches={teamA.matches} players={teamA.players} alerts={teamA.alerts}
@@ -129,7 +129,7 @@ export function ScoutApp() {
             </div>
 
             {/* Set pieces + Style side by side */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+            <div className="rg-2" style={{ gap: 14, marginBottom: 14 }}>
               <SetPiecesCard nameA={teamA.name} nameB={teamB.name} A={teamA.setpieces} B={teamB.setpieces} />
               <StyleCard nameA={teamA.name} nameB={teamB.name} A={teamA.style} B={teamB.style} />
             </div>
@@ -145,7 +145,7 @@ export function ScoutApp() {
             />
 
             {/* Probability bars + Verdict */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+            <div className="rg-2" style={{ gap: 14, marginBottom: 14 }}>
               <div style={{ background: C.bg, border: `0.5px solid ${C.border}`, borderRadius: 12, padding: "14px 16px" }}>
                 <div style={{
                   fontSize: 10, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase",

@@ -48,7 +48,7 @@ export function StyleCard({ nameA, nameB, A, B }: StyleCardProps) {
       <SectionTitle>Estilo de jogo</SectionTitle>
 
       {/* Formation + description */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+      <div className="rg-2" style={{ gap: 14, marginBottom: 14 }}>
         <div>
           <span style={{
             fontSize: 13, fontWeight: 500, background: C.blue50, color: C.blue800,

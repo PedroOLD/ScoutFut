@@ -71,7 +71,7 @@ export function PoissonWidget({ teamA, teamB, avgAttackA, avgDefA, avgAttackB, a
     <div>
       <Card style={{ marginBottom: 12 }}>
         <SectionTitle>Modelo de Poisson — insira as médias</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 14 }}>
+        <div className="rg-2" style={{ gap: 16, marginBottom: 14 }}>
           <div>
             <div style={{ fontSize: 12, color: C.textSec, marginBottom: 6 }}>Time A</div>
             <input value={nA} onChange={e => setNA(e.target.value)}
@@ -122,20 +122,20 @@ export function PoissonWidget({ teamA, teamB, avgAttackA, avgDefA, avgAttackB, a
         const maxP = placares[0].p;
         return (
           <div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 10, marginBottom: 14 }}>
+            <div className="rg-4" style={{ gap: 10, marginBottom: 14 }}>
               <MetricCard label={`λ ${nA}`} value={lA.toFixed(2)} valueColor={C.blue600} sub="gols esperados" />
               <MetricCard label={`λ ${nB}`} value={lB.toFixed(2)} valueColor={C.purple600} sub="gols esperados" />
               <MetricCard label="Total esperado" value={(lA + lB).toFixed(2)} sub="gols na partida" />
               <MetricCard label="Over 2.5" value={`${over25.toFixed(1)}%`} valueColor={C.green800} />
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
+            <div className="rg-2" style={{ gap: 12, marginBottom: 14 }}>
               <Card>
                 <SectionTitle>Probabilidade de resultado</SectionTitle>
                 <ProbBar label={`${nA} vence`} pct={pA} color={C.blue400} />
                 <ProbBar label="Empate" pct={pD} color={C.gray400} />
                 <ProbBar label={`${nB} vence`} pct={pB} color={C.purple400} />
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 12 }}>
+                <div className="rg-2" style={{ gap: 8, marginTop: 12 }}>
                   <MetricCard label="Over 1.5" value={`${over15.toFixed(1)}%`} />
                   <MetricCard label="Ambos marcam" value={`${btts.toFixed(1)}%`} />
                 </div>

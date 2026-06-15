@@ -34,7 +34,7 @@ export function TeamColumn({ name, flag, coach, matches, goals_scored, goals_con
         {matches.map((m, i) => <MatchRow key={i} {...m} />)}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginTop: 10 }}>
+      <div className="rg-3" style={{ gap: 8, marginTop: 10 }}>
         <MetricCard label="Méd. marcados" value={goals_scored.toFixed(1)} valueColor={C.green800} sub="por jogo" />
         <MetricCard label="Méd. sofridos" value={goals_conceded.toFixed(1)} valueColor={C.amber800} sub="por jogo" />
         <MetricCard

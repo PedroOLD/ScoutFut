@@ -24,3 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ── Responsive grid helpers ──────────────────────────────────── */
+.rg-2 { display: grid; grid-template-columns: 1fr 1fr; }
+.rg-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+.rg-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+.rg-5 { display: grid; grid-template-columns: repeat(5, 1fr); }
+
+.scout-wrap { padding: 20px 24px; }
+.scout-hdr  { padding: 12px 24px; }
+.scout-tabs { display: flex; overflow-x: auto; border-radius: 12px 12px 0 0; }
+.scout-tabs::-webkit-scrollbar { display: none; }
+
+@media (max-width: 768px) {
+  .rg-2 { grid-template-columns: 1fr; }
+  .rg-3 { grid-template-columns: 1fr 1fr; }
+  .rg-4 { grid-template-columns: 1fr 1fr; }
+  .rg-5 { grid-template-columns: 1fr 1fr; }
+  .scout-wrap { padding: 12px; }
+  .scout-hdr  { padding: 10px 12px; }
+}
+
+@media (max-width: 480px) {
+  .rg-3 { grid-template-columns: 1fr; }
+  .scout-wrap { padding: 8px; }
+}
